@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>DETEKSI KONDISI BADAN</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <script src="js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$("#nilai_suhutubuh").load("view/suhutubuh.php");
+$("#nilai_kondisibadan").load("view/kondisibadan.php");
+var refreshId = setInterval(function()
+{
+  $("#nilai_suhutubuh").load('view/suhutubuh.php?randval='+ Math.random());
+  $("#nilai_kondisibadan").load('view/kondisibadan.php?randval='+ Math.random());
+}, 1000);
+});
+</script>
+</head>
+
+<body id="page-top">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" style="color: white;">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-fire" style="color: red;"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">DATA ROOM</div>
+      </a>
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="tabel index.php">
+          <i class="fas fa-box"></i>
+          <span>Data Suhu & Kondisi</span></a>
+      </li>
+    </ul>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <!-- Page Heading -->
+          <br>
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800"><b style="color:blue; text-shadow: 0 0 2px DodgerBlue;">DETEKSI KONDISI BADAN BERDASARKAN SUHU TUBUH</b></h1>
+          </div>
+            <marquee direction="up" scrollamount="50" align="center" behavior="alternate" width="66%"><marquee direction="right" behavior="alternate"><b style="color: blue"> <== === === === === === === === === === === === === === ==> </b></h1><br></marquee></marquee>
+    <form action="insertnama.php" method="GET">
+      <b style="color:black; text-shadow: 0 0 2px DodgerBlue;">Masukan Nama Lengkap : </b>
+        <input name="tambahnama" type="text" style="width: 30%; height: 25px; font-size: 15px;" autofocus="tambahnama" required onkeypress='return harusHuruf(event)'><br><br> <!-- required = tidak boleh kosong -->
+    <script>// Javascript untuk proses input hanya boleh huruf & spasi (angka & simbol tidak boleh)
+      function harusHuruf(evt){
+        var charCode = (evt.which) ? evt.which : event.keyCode
+        if ((charCode < 65 || charCode > 90)&&(charCode < 97 || charCode > 122)&&charCode>32)
+            return false;
+        return true; }
+    </script>
+          <!-- Content Row -->
+          <div class="row">
+            <!-- Tampilan Suhu Tubuh -->
+            <div class="col-xl-8 col-lg-7"> <!---Mengatur lebar kotak suhu tubuh-->
+              <div class="card border-left-primary shadow h-100 py-2"> <!---Memberi shadow/warna pada kotak-->
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center"> <!---Mengatur posisi icon menyampin kanan-->
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"><h6><b>Suhu Tubuh :</b></h6></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        <h4><b><div id="nilai_suhutubuh"></div></b></h4>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-temperature-high fa-2x text-gray-300"></i> <!--Memberikan Icon-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+ 
+            <!-- Tampilan Kondisi Badan -->
+            <div class="col-xl-8 col-lg-7"> <!---Mengatur lebar kotak kondisi badan-->
+              <div class="card border-left-success shadow h-100 py-2"> <!---Memberi shadow/warna pada kotak-->
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center"> <!---Mengatur posisi icon menyampin kanan-->
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1"><h6><b>Kondisi Badan :</b></h6></div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">
+                        <h4><b><div id="nilai_kondisibadan"></div></b></h4>
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-user fa-2x text-gray-300"></i> <!--Memberikan Icon-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+      <br>
+      <input style="box-shadow: 0 0 5px DodgerBlue; cursor: pointer; margin-left: 600px;" type="submit" value="SIMPAN DATA">
+    </form><br>
+    </div>
+  </div>
+    <font face="Times New Roman"><h6 style = "text-align:center; color:black;"><b> @Tugas_Akhir 2022 - Muhammad Eko Romadhon </b></h6></font>
+</body>
+</html>

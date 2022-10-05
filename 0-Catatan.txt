@@ -1,0 +1,9 @@
+Nama : Muhammad Eko Romadhon
+NIM   : 18416255201005
+Email : mekoromad17@gmail.com
+
+Project Akhir Semester 8 (Kuliah) :
+Project ke-9  = Tugas Akhir (Skripsi)
+Judul Project = Deteksi Kondisi Badan Berdasarkan Suhu Tubuh Dengan Metode Fuzzy Logic Tsukamoto
+
+Note : Tugas Akhir menggunakan Peralatan Arduino IoT (Nodemcu) yang dikombinasikan dengan Sistem Web sebagai Monitoring data dan Input data pada Database.
